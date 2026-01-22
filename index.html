@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABCO Asia Group - Corporate Landing Page</title>
+    <title>ABCO Asia Group – Corporate Landing Page</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html, body {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             background-color: #000;
             color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -30,94 +30,260 @@
             border-bottom: 1px solid #1f2937;
             z-index: 50;
         }
-        
-        nav .container {
-            max-width: 80rem;
-            margin: 0 auto;
-            padding: 1.25rem 2rem;
+
+        nav ul {
+            list-style: none;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            gap: 3rem;
+            padding: 1rem 2rem;
         }
-        
-        nav h1 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
-        
-        .nav-subtitle {
-            font-size: 0.75rem;
-            color: #6b7280;
+
+        nav a:hover {
+            color: #60a5fa;
         }
-        
-        .nav-right {
-            text-align: right;
-            font-size: 0.875rem;
-            color: #9ca3af;
+
+        main {
+            margin-top: 60px;
+            padding: 2rem;
         }
-        
+
         /* Hero Section */
         .hero {
-            padding-top: 10rem;
-            padding-bottom: 6rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            max-width: 80rem;
-            margin: 0 auto;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
         }
-        
-        .hero h2 {
-            font-size: clamp(2rem, 8vw, 3.75rem);
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
             font-weight: 700;
-            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #9ca3af;
             margin-bottom: 2rem;
         }
-        
-        .accent {
-            color: #10b981;
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
-        .subtitle {
-            font-size: clamp(1rem, 4vw, 1.25rem);
-            color: #9ca3af;
-            max-width: 48rem;
-            line-height: 1.75;
-            margin-bottom: 3rem;
+
+        .brand-item {
+            background-color: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
-        
-        .tagline {
-            font-size: clamp(1rem, 4vw, 1.125rem);
-            color: #10b981;
-            font-weight: 600;
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+            background-color: #262626;
+        }
+
+        .brand-item h3 {
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
-        
-        .subtagline {
+
+        .brand-item p {
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .promise-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .promise-item {
+            background-color: #1a1a1a;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .promise-item .mark {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: #000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promise-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promise-item p {
+            font-size: 0.95rem;
+            color: #d1d5db;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #1f3a93 0%, #1a1a1a 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .cta-section a {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-section a:hover {
+            background-color: #2563eb;
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid #1f2937;
+            padding: 2rem;
+            text-align: center;
             color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            color: #d1d5db;
+            font-size: 1rem;
+            line-height: 1.8;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <div>
-                <h1>ABCO ASIA GROUP</h1>
-                <div class="nav-subtitle">Corporate Landing Page</div>
-            </div>
-            <div class="nav-right">
-                <div>Review Feedback</div>
-            </div>
-        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#brands">Brands</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Your Pets Entire World, <span class="accent">Curated</span> at Every Budget</h2>
-        <p class="subtitle">From the premium-obsessed to the smartly-practical ABCO Asia bridges the gap between "I want the absolute best" and "I want the absolute best without re-mortgaging the house."</p>
-        <p class="tagline">The Authority in Premium Pet Nutrition</p>
-        <p class="subtagline">Where Passion for Pets Meets 20 Years of Excellence</p>
-    </section>
+
+    <main>
+        <section class="hero">
+            <h1>ABCO Asia Group</h1>
+            <p>Leading Pet Nutrition Solutions Across Asia</p>
+        </section>
+
+        <section id="about">
+            <h2>Our Foundation</h2>
+            <p>ABCO Asia Group is committed to delivering premium pet nutrition solutions. With decades of experience serving Malaysia and Asia-Pacific markets, we partner only with brands committed to animal welfare and environmental responsibility.</p>
+        </section>
+
+        <section id="brands">
+            <h2>Our Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <h3>Addiction Pet Foods</h3>
+                    <p>Premium grain-free pet nutrition with natural ingredients</p>
+                </div>
+                <div class="brand-item">
+                    <h3>AIXIA</h3>
+                    <p>Specialized nutrition for discerning pet owners</p>
+                </div>
+                <div class="brand-item">
+                    <h3>Zealandia</h3>
+                    <p>New Zealand premium pet food brand</p>
+                </div>
+                <div class="brand-item">
+                    <h3>Versele-Laga</h3>
+                    <p>Complete nutrition for all pet species</p>
+                </div>
+                <div class="brand-item">
+                    <h3>Supreme</h3>
+                    <p>Quality small animal nutrition solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="promise-section">
+                <div class="promise-item">
+                    <div class="mark">Brand Promise</div>
+                    <h4>Ethical Always</h4>
+                    <p>We partner only with brands committed to animal welfare and environmental responsibility</p>
+                </div>
+                <div class="promise-item">
+                    <div class="mark">Brand Promise</div>
+                    <h4>Accessibility</h4>
+                    <p>Premium nutrition exists at multiple price points–quality never requires luxury pricing</p>
+                </div>
+                <div class="promise-item">
+                    <div class="mark">Brand Promise</div>
+                    <h4>Innovation</h4>
+                    <p>We stay ahead of trends because our brands invest in research, not marketing hype</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Need to Discuss Further?</h2>
+            <p>ABCO Asia Group is committed to delivering premium pet nutrition solutions. Contact us to learn more about our brands and how we can support your pet nutrition needs.</p>
+            <p style="color: #10b981; font-weight: 600;">Your Pets Deserve the Best. Let Us Help You Deliver It.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>ABCO Asia Group Corporate Landing Page</p>
+        <p>Premium Pet Nutrition Since 2003 | Serving Malaysia & Asia-Pacific</p>
+        <p>©Copy; 2024 ABCO Asia Sdn. Bhd. All rights reserved.</p>
+    </footer>
 </body>
 </html>

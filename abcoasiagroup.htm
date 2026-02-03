@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABCO Asia Group - Premium Pet Nutrition Distribution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Switzer:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #0d2818 50%, #0a1929 100%);
+            color: #e0e0e0;
+            line-height: 1.7;
+            min-height: 100vh;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.95) 0%, rgba(13, 40, 24, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            padding: clamp(3.5rem, 8vw, 5.5rem) clamp(1.5rem, 5vw, 4rem);
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        h1 {
+            font-family: 'Switzer', 'Inter', sans-serif;
+            font-size: clamp(2.8rem, 11vw, 4.5rem);
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.8px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+            color: #a8d5ba;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: #90caf9;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(2.5rem, 7vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        section {
+            grid-column: 1 / -1;
+            background: rgba(26, 35, 50, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(42, 95, 78, 0.25);
+            border-radius: 20px;
+            padding: clamp(2.5rem, 5vw, 4rem);
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+
+        section:hover {
+            border-color: rgba(212, 175, 55, 0.15);
+            background: rgba(26, 35, 50, 0.75);
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .logo-box {
+            width: clamp(80px, 13vw, 110px);
+            height: clamp(80px, 13vw, 110px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.7), rgba(42, 95, 78, 0.7));
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            flex-shrink: 0;
+        }
+
+        .logo-text {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #d4af37;
+            text-align: center;
+            padding: 8px;
+            line-height: 1.3;
+        }
+
+        .section-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .section-title h2 {
+            font-family: 'Switzer', 'Inter', sans-serif;
+            font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.4px;
+            line-height: 1.2;
+        }
+
+        .section-title p {
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+            color: #a8d5ba;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: clamp(1.05rem, 2.3vw, 1.2rem);
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        ul {
+            margin-left: 1.8rem;
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+
+        li {
+            font-size: clamp(1.05rem, 2.3vw, 1.2rem);
+            margin-bottom: 1rem;
+            color: #e0e0e0;
+            line-height: 1.7;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        li:before {
+            content: "•";
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+
+        .whatsapp-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.12);
+        }
+
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.9rem;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            padding: clamp(0.9rem, 2.2vw, 1.15rem) clamp(1.3rem, 3vw, 2rem);
+            font-size: clamp(1rem, 2.2vw, 1.1rem);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20ba58;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.35);
+        }
+
+        .whatsapp-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .connect-wrapper {
+            grid-column: 1 / -1;
+            background: rgba(26, 35, 50, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(42, 95, 78, 0.25);
+            border-radius: 20px;
+            padding: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .connect-wrapper h2 {
+            font-family: 'Switzer', 'Inter', sans-serif;
+            font-size: clamp(1.8rem, 5.5vw, 2.8rem);
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.4px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: clamp(2.5rem, 8vw, 5rem);
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(120px, 20vw, 200px);
+            height: clamp(60px, 8vw, 80px);
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.6), rgba(42, 95, 78, 0.6));
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.35s cubic-bezier(0.23, 1, 0.320, 1);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, rgba(27, 77, 62, 0.9), rgba(42, 95, 78, 0.9));
+            border-color: rgba(212, 175, 55, 0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(212, 175, 55, 0.2);
+        }
+
+        .social-text {
+            font-weight: 700;
+            color: #d4af37;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(13, 27, 42, 0.95) 0%, rgba(10, 25, 41, 0.95) 100%);
+            text-align: center;
+            padding: 4rem clamp(1.5rem, 5vw, 4rem);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+            margin-top: 3rem;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            color: #a0a0a0;
+            line-height: 1.8;
+        }
+
+        footer p {
+            margin: 0.8rem 0;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .logo-box {
+                width: 70px;
+                height: 70px;
+            }
+
+            main {
+                padding: clamp(1.5rem, 5vw, 2.5rem);
+                gap: clamp(1rem, 3vw, 1.5rem);
+            }
+
+            section {
+                padding: clamp(1.5rem, 4vw, 2.5rem);
+            }
+
+            .social-links {
+                gap: clamp(1.5rem, 4vw, 2.5rem);
+            }
+        }
+
+        hr {
+            grid-column: 1 / -1;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0), rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0));
+            margin: 0;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #f0f0f0;
+        }
+
+        em {
+            color: #a8d5ba;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ABCO ASIA GROUP</h1>
+        <p class="tagline">Where Premium Pet Nutrition Meets Strategic Partnership</p>
+        <p class="subtitle">20+ Years of Excellence in Pet Food Distribution Across Malaysia & Asia-Pacific</p>
+    </header>
+
+    <main>
+        <!-- OPENING TAG LINE SECTION -->
+        <section>
+            <p><strong>Your Pet's Entire World, Curated at Every Budget</strong></p>
+            <p>From the premium-obsessed to the smartly-practical: ABCO Asia bridges the gap between "I want the absolute best" and "I want the absolute best without re-mortgaging the house."</p>
+        </section>
+
+        <hr>
+
+        <!-- MAIN COMPANY PROFILE SECTION -->
+        <section>
+            <div class="section-title">
+                <h2>The Authority in Premium Pet Nutrition</h2>
+                <p>Passion for Pets Meets 20+ Years of Excellence</p>
+            </div>
+
+            <p>Welcome to <strong>ABCO Asia Group</strong>—where pet nutrition isn't just a business, it's a passion project. For over two decades, ABCO Asia has been the quiet guardian of premium pet nutrition across Malaysia and the broader Asia-Pacific region. We're not just distributors; we're curators of the world's finest pet food brands, handpicked from prestigious origins spanning New Zealand, Japan, Europe, and North America. With a meticulously crafted portfolio of brands representing over a century of combined expertise, we've revolutionized how Malaysian pet owners think about feeding their beloved companions.</p>
+
+            <p><strong>Our Story:</strong> Established in 2003, ABCO Asia Sdn. Bhd. began with a visionary mission—to introduce Malaysia to holistic, premium pet nutrition at a time when the concept barely existed in the mainstream market. We were pioneers. While others were content selling commodity pet food, we recognized a growing demographic of discerning pet parents who wanted <em>more</em> for their furry family members. Something healthier. Something better sourced. Something proven.</p>
+
+            <p>Today, that vision has matured into reality. We've cultivated exclusive distribution rights for many of our marquee brands, built partnerships with over 200 quality retail outlets across Peninsular and East Malaysia, and earned the trust of some of the nation's most respected pet retailers. Our small but mighty team of 10 industry experts works with singular focus: ensuring that every brand we represent, every product that reaches a pet's bowl, meets our unwavering standards for quality, safety, and nutritional excellence.</p>
+
+            <p><strong>Why We Matter:</strong> The pet food industry is crowded with mediocrity. But ABCO Asia stands apart. We don't chase trends—we set them. We don't compromise on quality—we demand it. And we don't see price points as excuses for poor nutrition. Whether a pet parent is shopping for an affordable but nutritious meal or seeking ultra-premium, specialized nutrition, ABCO has the answer. This is the fundamental philosophy that earned us recognition as a Top 100 MIYE 2024 winner and the trust of Malaysia's leading pet retail chains.</p>
+
+            <p><strong>What Sets Us Apart:</strong> We are the <strong>sole distributor</strong> (often exclusive) for many of our brands in Malaysia. This isn't accidental. Brands partner with us because we understand the Asian market, respect their heritage and formulations, and have the distribution network to make them accessible to discerning pet owners. We bridge the gap between aspirational global brands and local availability. We solve the problem of pet parents having to order from overseas when the solution is waiting right here.</p>
+        </section>
+
+        <hr>
+
+        <!-- ADDICTION SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">ADDICTION</div>
+                </div>
+                <div class="section-title">
+                    <h2>ADDICTION PET FOODS</h2>
+                    <p>Sole & Exclusive Distributor Since 2003</p>
+                </div>
+            </div>
+
+            <p>When ABCO Asia was founded, Addiction Pet Foods was our first brand partnership—and what a choice it proved to be. Addiction didn't just choose <em>any</em> distributor in Malaysia. They chose us. And they've stayed with us for over 20 years. In a market flooded with options, that's not luck—that's a vote of confidence.</p>
+
+            <p>Addiction is the gold standard in holistic pet nutrition, pioneered by a vision that shouldn't exist (but does): a brand that cares as much about your dog's health as a veterinary surgeon would. Born in New Zealand in 2002, Addiction was founded when a visionary clinical nutritionist and veterinary surgeon realized that most pet foods were causing harm rather than helping. His personal motivation? Helping his own dog, Zack, overcome debilitating allergies.</p>
+
+            <p><strong>The New Zealand Advantage:</strong> New Zealand's remote, pristine environment is free from mad cow and foot-and-mouth disease. The country's free-range, organic-rich farming practices produce meat sources uncontaminated by artificial hormones, antibiotics, or growth stimulants. This is where Addiction sources its proteins—wild venison, grass-fed lamb, sustainably caught fish. Not a single ingredient comes from China; every component is traceable, ethical, and human-grade quality.</p>
+
+            <p><strong>The Addiction Difference:</strong></p>
+            <ul>
+                <li><strong>Pioneer in Hypoallergenic Nutrition:</strong> Addiction was first to recognize that common proteins cause allergies; they revolutionized the industry with novel, digestible proteins</li>
+                <li><strong>Air-Dried Innovation:</strong> Creating nutrient-dense, shelf-stable foods that preserve the essence of raw nutrition</li>
+                <li><strong>Science-Backed Formulation:</strong> Every recipe is built on 20+ years of research, featuring balanced amino acids, omega ratios, and taurine for heart health</li>
+                <li><strong>Minimal Recalls:</strong> In nearly 22 years, only one voluntary recall—a testament to quality obsession</li>
+            </ul>
+
+            <p><strong>Why ABCO Brought Addiction In:</strong> We recognized early that Malaysian pet owners were evolving. They wanted better. They wanted proven. They wanted a brand that stood for something beyond profit. Addiction was that brand. Over 20 years later, it remains our hero offering, trusted by premium boutique pet shops and serious pet enthusiasts across Malaysia.</p>
+        </section>
+
+        <hr>
+
+        <!-- AIXIA SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">AIXIA</div>
+                </div>
+                <div class="section-title">
+                    <h2>AIXIA</h2>
+                    <p>Japan's Premier Cat Food Legacy – First & Sole Distributor in Southeast Asia</p>
+                </div>
+            </div>
+
+            <p>In a region flooded with generic cat foods, ABCO was the first to recognize AIXIA's potential and introduce it to Malaysia. Now it's one of our strongest performers. AIXIA's name itself tells the story: "Ai" (love) + "Xia" (happiness from "shiawase") = "To Love is Happiness." Since 1990, this Japanese institution has focused exclusively on feline nutrition with an attention to detail that borders on obsessive.</p>
+
+            <p><strong>The Gold Standard:</strong> AIXIA's KIN-CAN is quite literally the gold standard of Japanese cat food. Introduced in 1985 as Japan's first premium mini-can of tuna white meat flakes, KIN-CAN has been Japan's most trusted premium canned cat food for nearly 40 years. Cat owners don't just feed their cats Kin-kan—they <em>choose</em> it, repeatedly, passionately.</p>
+
+            <p><strong>Japanese Precision:</strong></p>
+            <ul>
+                <li><strong>Human-Grade Quality:</strong> Made with the same quality standards as human food; customers have genuinely said the tuna tastes "better than regular canned tuna"</li>
+                <li><strong>Umami Excellence:</strong> Deep tuna flavor enhanced with Japanese broth (dashi) and bioavailable iron to prevent feline anemia</li>
+                <li><strong>Innovation Beyond Food:</strong> The i CARE series features peptides co-developed with Kitasato University—a breakthrough in feline digestibility and taste</li>
+                <li><strong>Hydration-Focused:</strong> Recognizing that cats often don't drink enough water, AIXIA's pastes and broths encourage natural hydration</li>
+            </ul>
+
+            <p><strong>Why Pet Parents in Malaysia Love It:</strong> Japanese pet food is synonymous with meticulous quality control and innovation. AIXIA represents that promise. Whether it's the classic Kuro-can (dark tuna with skipjack) or the hydration-focused i CARE line, AIXIA offers solutions Malaysian cat owners are hungry to find. By being the exclusive distributor, ABCO ensures consistent availability of a brand that's become a status symbol among serious cat enthusiasts.</p>
+        </section>
+
+        <hr>
+
+        <!-- ZEALANDIA SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">ZEALANDIA</div>
+                </div>
+                <div class="section-title">
+                    <h2>ZEALANDIA</h2>
+                    <p>New Zealand's Ethical, Holistic Innovation</p>
+                </div>
+            </div>
+
+            <p>While Addiction pioneered holistic nutrition, Zealandia represents the next evolution: sustainable, ethically sourced, species-aligned feeding. It's what happens when innovation meets conscience. Zealandia was created by visionary founders who asked: "What if we could feed pets the way nature intended—using byproducts that would otherwise be wasted, sourcing animals treated humanely, and creating complete nutrition in a single can?" The answer was Zealandia.</p>
+
+            <p><strong>The Sustainability Story:</strong></p>
+            <ul>
+                <li><strong>Ethical Sourcing:</strong> Every protein source is certified by New Zealand's Ministry of Primary Industries, adhering to stringent animal welfare standards</li>
+                <li><strong>Unique Proteins:</strong> Including brushtail possum (invasive species that damages native NZ forests—eating it protects the ecosystem), wild-caught king salmon, grass-fed lamb</li>
+                <li><strong>Green-Lipped Mussels:</strong> Natural anti-inflammatory omega-3s from sustainable NZ waters</li>
+                <li><strong>Minimal Waste:</strong> Using nutrient-dense organ meats and broths ensures nothing is wasted</li>
+            </ul>
+
+            <p><strong>Nutritional Innovation:</strong></p>
+            <ul>
+                <li>60% meat protein on a dry-matter basis (extraordinarily high)</li>
+                <li>Natural green tripe for enzymatic support and digestive health</li>
+                <li>Grain-free, filler-free formulations for sensitive pets</li>
+                <li>Life-stage specific nutrition for puppies, adults, seniors</li>
+            </ul>
+
+            <p><strong>Why ABCO Carries It:</strong> Zealandia represents the future of premium pet nutrition—one where ethics and nutrition are inseparable. Malaysian pet owners increasingly demand brands that align with their values. Zealandia delivers that. For boutique retailers positioning themselves as premium, ethical operators, Zealandia is essential inventory.</p>
+        </section>
+
+        <hr>
+
+        <!-- VERSELE-LAGA SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">VERSELE-LAGA</div>
+                </div>
+                <div class="section-title">
+                    <h2>VERSELE-LAGA</h2>
+                    <p>European Mastery Since 1932 – 131+ Years of Family Expertise</p>
+                </div>
+            </div>
+
+            <p>Versele-Laga is old Europe doing what old Europe does best: perfecting craft through generations. Founded in 1932 by Prudent Versele in rural Deinze, Belgium, this fourth-generation family business has quietly dominated European pet nutrition for nearly a century. Today, with 11 manufacturing facilities across multiple continents and a presence in 75+ countries, Versele-Laga serves over 15 million pets daily.</p>
+
+            <p><strong>The European Legacy:</strong></p>
+            <ul>
+                <li><strong>Over 2,100 Products:</strong> From specialist bird foods to premium dog and cat nutrition, Versele-Laga is a complete ecosystem</li>
+                <li><strong>Research-Driven:</strong> Every formula is backed by nutritional science and rigorous testing</li>
+                <li><strong>Multi-Species Expertise:</strong> Unique in the industry—equally excellent at feeding birds, small mammals, dogs, cats, and farm animals</li>
+                <li><strong>Opti Life Premium Range:</strong> Their flagship premium lines for dogs and cats represent European standards for grain-free, nutrient-dense formulation</li>
+            </ul>
+
+            <p><strong>The Versele-Laga Principles:</strong></p>
+            <ul>
+                <li><strong>Respect:</strong> Understanding the needs of environment, pets, people, and business partners</li>
+                <li><strong>Innovation:</strong> Constantly evolving to meet emerging needs</li>
+                <li><strong>Responsibility:</strong> Ethical sourcing and sustainable practices</li>
+                <li><strong>Excellence:</strong> No compromises on quality</li>
+            </ul>
+
+            <p><strong>Why ABCO Represents Versele-Laga:</strong> For retailers seeking European credibility and complete product range solutions—from specialty bird foods to premium cat kibble—Versele-Laga is non-negotiable. It's the brand that gives retail partners access to one of Europe's most trusted, award-winning manufacturers. It's the assurance of quality that's been tested across 75 countries and proven effective.</p>
+        </section>
+
+        <hr>
+
+        <!-- SUPREME SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">SUPREME</div>
+                </div>
+                <div class="section-title">
+                    <h2>SUPREME</h2>
+                    <p>The UK's Specialist Innovation Leader – 30+ Years of Small Animal Nutrition</p>
+                </div>
+            </div>
+
+            <p>While others focused on dogs and cats, Supreme Petfoods saw an underserved market and became the global leader: high-quality, species-specific nutrition for small animals. Founded in 1990 from a rural Suffolk farm, Supreme began by delivering quality hay to local pet shops. The founder recognized that small pets—rabbits, guinea pigs, hamsters, ferrets—were being fed generic, nutrient-poor foods. So he did something radical: he created species-specific, veterinary-recommended diets.</p>
+
+            <p><strong>The Supreme Achievement:</strong></p>
+            <ul>
+                <li><strong>Science Selective Range:</strong> Veterinary-recommended, formulated for specific species at specific life stages</li>
+                <li><strong>Award Recognition:</strong> 8 consecutive years of Small Animal Product of the Year; 2024 Manufacturer of the Year</li>
+                <li><strong>Natural Ingredients:</strong> No added sugar, no artificial colors—only ethically sourced, traceable components</li>
+                <li><strong>Dedication to Standards:</strong> Supreme uses the same standards as human food production; each production line is dedicated (vegetarian food made in vegetarian environment, etc.)</li>
+            </ul>
+
+            <p><strong>The Tiny Friends Farm & Science Selective Brands:</strong></p>
+            <ul>
+                <li>Premium positioning for discerning small animal enthusiasts</li>
+                <li>Tasty yet nutritious—pets actually <em>love</em> it</li>
+                <li>Health-focused formulations for sensitive digestive systems</li>
+                <li>Educational materials helping owners understand proper nutrition</li>
+            </ul>
+
+            <p><strong>Why ABCO Carries It:</strong> Malaysia has a growing small animal pet community—guinea pigs, rabbits, hamsters, ferrets. Supreme is the ONLY brand that takes these pets seriously nutritionally. It's inventory that attracts a specific customer: the owner who views their small pet as family and will pay premium prices for premium nutrition. It differentiates retail partners from commodity operators.</p>
+        </section>
+
+        <hr>
+
+        <!-- NATURAL PET & PET HERITAGE SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">ASIAN<br>BRANDS</div>
+                </div>
+                <div class="section-title">
+                    <h2>NATURAL PET & PET HERITAGE</h2>
+                    <p>Singapore-Born, Asia-Proven – Local Champions Meeting Asian Needs</p>
+                </div>
+            </div>
+
+            <p>Natural Pet and Pet Heritage represent ABCO's commitment to supporting quality Asian brands developing solutions specifically for the region. These Singapore-based brands understand Asian climate, water quality, pet demographics, and owner preferences in ways that purely Western brands cannot. They combine Asian attention to detail with premium formulation standards, creating products that perform beautifully in tropical environments where traditional European or American foods sometimes struggle.</p>
+
+            <p><strong>Why They Matter in ABCO's Portfolio:</strong></p>
+            <ul>
+                <li><strong>Regional Relevance:</strong> Formulated for Asian pets living in Asian conditions</li>
+                <li><strong>Supply Chain Efficiency:</strong> Faster availability, lower import complexity</li>
+                <li><strong>Cultural Alignment:</strong> Ingredients and flavor profiles Asian pet owners prefer</li>
+                <li><strong>Price Accessibility:</strong> Quality without extreme premium pricing</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- CAT LITTER SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">CAT<br>LITTER</div>
+                </div>
+                <div class="section-title">
+                    <h2>CAT LITTER: WBCL & TEA FRESH</h2>
+                    <p>Complete Waste Management Solutions</p>
+                </div>
+            </div>
+
+            <p>ABCO recognizes that premium pet care extends beyond food. Our cat litter partnerships address the hygiene and environmental needs of discerning cat owners. WBCL (World's Best Cat Litter) is the USA's premium clumping litter, made from renewable plant materials. For owners seeking eco-friendly, dust-free solutions with superior odor control. Tea Fresh (Taiwan) is an innovative Asian formulation combining traditional wisdom with modern clumping technology. The natural tea-based odor control appeals to environmentally conscious Asian owners.</p>
+        </section>
+
+        <hr>
+
+        <!-- EARTHBATH SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">EARTHBATH</div>
+                </div>
+                <div class="section-title">
+                    <h2>EARTHBATH</h2>
+                    <p>USA's Natural Pet Care Authority – Founded 1995</p>
+                </div>
+            </div>
+
+            <p>Earthbath represents the grooming and topical care extension of ABCO's mission: everything your pet needs to thrive. Founded in San Francisco, Earthbath specializes in natural, non-toxic pet shampoos, conditioners, and grooming products. Every formula is soap-free and pH-balanced with organic aloe vera and natural oatmeal.</p>
+
+            <ul>
+                <li>Packed with organic aloe vera and natural oatmeal</li>
+                <li>Free from parabens, sulfates, synthetic dyes, and phthalates</li>
+                <li>Made in the USA to ensure quality control</li>
+                <li>Cruelty-free and supported by a 100% Happiness Guarantee</li>
+            </ul>
+
+            <p><strong>Why It Completes Our Offering:</strong> A premium pet deserves premium grooming. Earthbath allows ABCO retail partners to offer complete wellness solutions—food, litter, grooming—under trusted brands. It's the category that encourages repeat shopping and basket-building.</p>
+        </section>
+
+        <hr>
+
+        <!-- BUDDY CARE SECTION -->
+        <section>
+            <div class="section-header">
+                <div class="logo-box">
+                    <div class="logo-text">BUDDY<br>CARE</div>
+                </div>
+                <div class="section-title">
+                    <h2>BUDDY CARE</h2>
+                    <p>Accessible Premium for Every Budget</p>
+                </div>
+            </div>
+
+            <p>Not every pet owner can afford premium pricing. Buddy Care represents ABCO's commitment to making quality accessible. It's premium nutrition at achievable price points—proving that good ingredients and fair formulations don't require luxury pricing. Because we believe: a dog eating quality nutrition at a fair price is better than a dog eating mediocre food. Period.</p>
+        </section>
+
+        <hr>
+
+        <!-- WHY RETAILERS CHOOSE ABCO SECTION -->
+        <section>
+            <div class="section-title">
+                <h2>Why Retailers Choose ABCO Asia</h2>
+                <p>20+ Years of Partnership, Trust, and Excellence</p>
+            </div>
+
+            <p><strong>The Portfolio Depth:</strong> We don't ask retailers to choose between brands; we give them the <em>complete ecosystem</em>. Whether they're serving boutique premium seekers or budget-conscious families, we have solutions at every price point. Cat food, dog food, small animal nutrition, litter, grooming supplies—all curated, all quality-assured, all backed by ABCO's expertise.</p>
+            
+            <p><strong>Exclusive Distribution Advantage:</strong> For several of our marquee brands—particularly <strong>Addiction</strong> and <strong>Aixia</strong>—ABCO is the sole distributor in Malaysia. This means competitive differentiation, supply security, margin protection, and direct brand partnership support with training, materials, and promotional support.</p>
+
+            <p><strong>200+ Retail Partners Trust Us:</strong> Our network spans from premium boutique shops to leading mall-based chains. Our partners include Pet Lovers Centre (30+ outlets), Pets Wonderland, Petsmore, Coo&RIKU (220+ stores region-wide), The Pet Safari, AAOO Pets Kepong, Pet Integrity, Dhani Pet Store, Rania Distributor, leading AEON stores, and Village Grocer. These retailers didn't choose ABCO by accident. They chose us because we deliver quality, honor our commitments, and treat them as genuine partners in our mission.</p>
+        </section>
+
+        <hr>
+
+        <!-- CLOSING SECTION -->
+        <section>
+            <div class="section-title">
+                <h2>Why ABCO Asia</h2>
+                <p>Premium Pet Nutrition Built on Passion</p>
+            </div>
+
+            <p>In an industry dominated by commodities, discount pricing, and marketing noise, ABCO Asia represents something rarer: genuine expertise, unwavering quality standards, and authentic passion for pets. We didn't become Malaysia's trusted premium distributor by accident. We earned it through consistency, integrity, and an obsessive commitment to the simple principle that pets deserve better.</p>
+
+            <p>Whether you're a premium boutique seeking exclusive, innovative brands; an independent retailer building a reputation for quality; an international company seeking Southeast Asian market entry—ABCO Asia is your partner. Because at the end of the day, we're not selling pet food. We're helping you ensure that when someone's dog or cat eats the products you stock, they're not just fed—they're nourished, cared for, and valued the way they deserve to be.</p>
+
+            <p><strong>That's the ABCO difference.</strong></p>
+
+            <div class="whatsapp-section">
+                <p><strong>Ready to Partner with ABCO?</strong> Let's talk about how we can help your business thrive.</p>
+                <button class="whatsapp-button" onclick="sendWhatsApp()">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="white">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-5.031 1.378c-3.055 2.364-3.905 6.75-1.904 10.692 1.913 3.923 6.061 5.735 10.137 4.257 4.068-1.47 6.59-5.595 5.44-9.969-.784-2.941-3.456-5.149-6.387-5.494-.233-.027-.469-.038-.709-.036zm10.692-9.469h-21.65c-.537 0-.969.432-.969.969v21.062c0 .537.432.969.969.969h21.65c.537 0 .969-.432.969-.969v-21.062c0-.537-.432-.969-.969-.969z"/>
+                    </svg>
+                    Chat on WhatsApp
+                </button>
+            </div>
+        </section>
+
+        <!-- CONNECT WITH US SECTION -->
+        <div class="connect-wrapper">
+            <h2>Connect with Us</h2>
+            <div class="social-links">
+                <a href="https://linkedin.com/company/abco-asia" target="_blank" class="social-link" title="LinkedIn">
+                    <div class="social-text">LINKEDIN</div>
+                </a>
+                <a href="https://alibaba.com" target="_blank" class="social-link" title="Alibaba">
+                    <div class="social-text">ALIBABA</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 ABCO Asia Group. All rights reserved.</p>
+        <p>Representing 11+ Premium Pet Brands Across Malaysia & Asia-Pacific</p>
+        <p>Email: info@abcoasia.com | Phone: +603 XXXX XXXX</p>
+    </footer>
+
+    <script>
+        function sendWhatsApp() {
+            const message = "Hi ABCO Asia! I'm interested in learning more about your pet food brands and distribution partnerships.";
+            const encodedMessage = encodeURIComponent(message);
+            window.open('https://wa.me/?text=' + encodedMessage, '_blank');
+        }
+    </script>
+</body>
+</html>
